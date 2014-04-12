@@ -1,5 +1,5 @@
 
-CFLAGS=-Wall -g -O0 -ansi -pedantic
+CFLAGS=-Wall -g -O0 --std=gnu99 -pedantic
 
 SRCS=$(wildcard *.c)
 
