@@ -16,6 +16,8 @@
  *  02110-1301, USA.
  */
 
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -43,7 +45,7 @@ main (int argc, char **argv) {
 	unsigned char *s;
 	s = (unsigned char *) hex_hash ((unsigned char *) argv[1]);
 	snprintf (buf, sizeof (buf), SHEERDNS_DIR "/%s/%s", s, argv[1]);
-	mkdir (buf);
+	mkdir (buf, 0700);
 	l = strlen ((char *) s);
 	write (1, s, l);
 	write (1, "\n", 1); }
