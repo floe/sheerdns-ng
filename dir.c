@@ -53,7 +53,7 @@ try_reverse_in_arpa (char *query) {
     for (; k >= 0; k--)
 	if (k == 0 || query[k - 1] == '.') {
 	    strncat ((char *) new_query, (char *) query + k, c - k);
-	    k && strcat ((char *) new_query, ".");
+	    if (k != 0) strcat ((char *) new_query, ".");
 	    c = --k; }
     return (char *) strdup (new_query); }
 
