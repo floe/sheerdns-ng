@@ -107,7 +107,7 @@ ftp.henry.test.com, user1.lab.chemsitry.test.com, etc. :
 	char *t;
 	if (qtype == REQ_SOA || qtype == REQ_NS)	/* probably a bad idea to wildcard these, so return */
 	    return NULL;
-	q = t = (char *) strdup (s);
+	q = t = strdup ((char*)s);
 	while (*t && *t != '.')
 	    t++;
 	if (!*t || t == q || !(*--t = '*') || get_file_name (buf, sizeof (buf), qtype, (unsigned char *) t)
