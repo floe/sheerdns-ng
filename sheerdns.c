@@ -200,6 +200,10 @@ main (int argc, char **argv) {
 	if (fork () > 0)
 	    exit (0); }
 
+    // drop privileges
+    setgid(SHEERDNS_UID);
+    setuid(SHEERDNS_UID);
+
     while (1) {
 	struct connection *c, *d;
 	fd_set fdset;

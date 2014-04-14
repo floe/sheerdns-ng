@@ -28,3 +28,4 @@ char **directory_lookup (int qtype, unsigned char *s);
 time_t get_mtime (int qtype, unsigned char *s);
 
 #define SHEERDNS_DIR	"/var/sheerdns"
+#define SHEERDNS_UID  65534 // nobody/nogroup
