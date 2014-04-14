@@ -64,7 +64,7 @@ get_file_name (char *buf, int len, int qtype, unsigned char *s) {
      if (qtype < 1 || qtype > 41)
 	return 1;
     s = (unsigned char *) try_reverse_in_arpa ((char *) s);
-    sprintf(str, "%s/%s/%s/%s", "/", hex_hash (s), s, qtype_name[qtype]);
+    snprintf(str, sizeof(str), "%s/%s/%s/%s", "/", hex_hash (s), s, qtype_name[qtype]);
     if (*s) {
 	if ( (fd = open(str, O_RDONLY)) != -1 )
 		snprintf (buf, len, "/%s/%s/%s", hex_hash (s), s, qtype_name[qtype]);
